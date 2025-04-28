@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chinese Free Novel Websites</title>
+  
+<!-- 1. External CSS files FIRST -->
+  <link rel="stylesheet" href="styles.css"> <!-- Your main stylesheet -->
+
+
+
+ <style>
+    
+h1 {
+  text-align: center;
+  colour: #333; /* Fixed from 'colour' to 'colour' */
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slide-in-animation 0.5s forwards;
+}
+
+@keyframes slide-in-animation {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+.item a:hover::after {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Background image for light mode */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  background-image: url('images/background.jpeg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #333;
+}
+
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1; /* Makes sure the particles are behind the content */
+}
+
+
+
+
+.back-to-top:hover {
+  background-color: #0056b3;
+}
+
+
+/* Dynamic Background for particles */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Send behind everything */
+  top: 0;
+  left: 0;
+}
+
+
+
+ /* === ADD THIS NEW CODE BELOW === */
+    /* Grid & Gallery Layout */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .gallery {
+      display: contents; /* Makes items part of the parent grid */
+    }
+
+    .item {
+      background: white;
+      padding: 15px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    /* Dark mode adjustments */
+    .dark-mode .item {
+      background: #333;
+      colour: #eee;
+    }
+    /* === END OF NEW CODE === */
+
+
+
+/* Dark Mode Button Styling */
+#darkModeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background: #ffffffcc;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 1000; /* Always stay above */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+  transition: background 0.3s;
+}
+
+#darkModeToggle:hover {
+transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #111;
+  color: #eee;
+}
+
+.dark-mode #darkModeToggle {
+  background: rgba(30, 30, 30, 0.9);
+  colour: #fff;          /* Fixed typo: 'colour' → 'colour' */
+  border-colour: #555;   /* Fixed typo: 'border-colour' → 'border-colour' */
+}
+
+/* Title color in dark mode */
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+}
+
+/* Light mode specific title color */
+body:not(.dark-mode) h1, 
+body:not(.dark-mode) h2, 
+body:not(.dark-mode) h3,
+body:not(.dark-mode) h4,
+body:not(.dark-mode) h5,
+body:not(.dark-mode) h6 {
+  color: #111;
+}
+
+/* Back to Top Button Styles */
+#backToTopBtn {
+  display: none; /* Initially hidden */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 1000; /* Always stay above */
+  transition: opacity 0.3s ease-in-out;
+}
+
+#backToTopBtn:hover {
+  background-color: #0056b3;
+}
+
+/* Rounded Corners and Shadows for Items */
+.item {
+  border-radius: 12px;  /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Soft shadow for lifting effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+  transform: translateY(-5px);  /* Slight upward movement */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);  /* Stronger shadow on hover */
+}
+
+
+/* Glow on Hover Effect for Items */
+.item a:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(0, 123, 255, 0.5);  /* Glowing effect */
+}
+
+
+/* Color Change on Hover for Links */
+.item a:hover {
+  color: #ff6347;  /* Change color to Tomato */
+}
+
+
+/* Ripple Effect for Links */
+.item a {
+  position: relative;
+  overflow: hidden;
+}
+
+.item a .ripple-effect {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.6);  /* Light white ripple */
+  border-radius: 50%;
+  pointer-events: none;
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+}
+
+.item a:hover .ripple-effect {
+  animation: ripple-animation 0.6s linear;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+
+
+    /* Your other styles here */
+  </style>
+
+ 	
+  <!-- 3. Dynamic background/particles.js (if it has CSS) -->
+  <link rel="stylesheet" href="particles.css"> <!-- Optional -->
+
+
+  <!-- (Optional) Dynamic Background Placeholder (CSS/Canvas setup if needed) -->
+
+</head>
+
+<body>
+
+  <!-- (Optional) Dynamic Background Container -->
+  <div id="particles-js"></div>
+
+  <header>
+    <h1>Free Chinese Novel Websites</h1>
+    
+    <!-- (Optional) Dark Mode Switch Placeholder -->
+
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+  </header>
+
+  <main>
+    <div class="grid-container">
+
+      <!-- Site Items Start -->
+      
+   <div class="gallery">
+  <div class="item fade-in slide-in"> <!-- Apply fade-in and slide-in classes -->
+    <a href="https://fictionzone.net/" target="_blank">
+      <img src="images/fictionzone.jpg" alt="FictionZone" loading="lazy"> <!-- Apply lazy loading -->
+      FictionZone
+    </a>
+  </div>
+</div>
+
+
+<div class="gallery">
+  <div class="item fade-in slide-in">
+    <a href="https://69shuba.cx/index.html" target="_blank">
+      <img src="images/69shuba.jpg" alt="69Shuba" loading="lazy">
+      69Shuba
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://www.piaotia.com/" target="_blank">
+      <img src="images/piaotia.jpg" alt="Piaotia" loading="lazy">
+      Piaotia
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://bqg123.net/" target="_blank">
+      <img src="images/bqg123.jpg" alt="Bqg123" loading="lazy">
+      Bqg123
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://www.uuks.org/" target="_blank">
+      <img src="images/uuks.jpg" alt="UU KS" loading="lazy">
+      UUkanshu
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://mianfei22.com/" target="_blank">
+      <img src="images/mianfei22.jpg" alt="Mianfei22" loading="lazy">
+      Mianfei22
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="http://m.ops89.com/" target="_blank">
+      <img src="images/ops89.jpg" alt="Ops89" loading="lazy">
+      Ops8 Novels
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://www.quanben.io/" target="_blank">
+      <img src="images/quanben.jpg" alt="Quanben" loading="lazy">
+      Quanben Novels
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://ffxs8.com/" target="_blank">
+      <img src="images/ffxs8.jpg" alt="FFXS8" loading="lazy">
+      FanFan Novels
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://www.trxs.me/" target="_blank">
+      <img src="images/trxs.jpg" alt="TRXS" loading="lazy">
+      Doujin Club
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://m.bixiange.me/" target="_blank">
+      <img src="images/bixiange.jpg" alt="Bixiange" loading="lazy">
+      Bixiange
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://www.xianyuksw.com/" target="_blank">
+      <img src="images/xianyuksw.jpg" alt="xianyuksw" loading="lazy">
+      Salted Fish Reading
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://www.ssxiaoshuo.com/" target="_blank">
+      <img src="images/ssxiaoshuo.jpg" alt="SS Xia" loading="lazy">
+      SoSo Novel
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://www.twbook.cc/" target="_blank">
+      <img src="images/twbook.jpg" alt="TW Book" loading="lazy">
+      Stone Novel
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://ixdzs.tw/" target="_blank">
+      <img src="images/ixdzs.jpg" alt="iXdzs" loading="lazy">
+      Love E-Books
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://www.fxnzw.com/" target="_blank">
+      <img src="images/fxnzw.jpg" alt="FXNZW" loading="lazy">
+      FeiXiangNiao Chinese Novels
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://www.doupocangqiong.org/shuku/" target="_blank">
+      <img src="images/doupocangqiong.jpg" alt="doupocang" loading="lazy">
+      Doupo Novel Network
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://www.fsshu.com/" target="_blank">
+      <img src="images/fsshu.jpg" alt="Fsshu" loading="lazy">
+      Fsshu
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://m.biq01.cc/" target="_blank">
+      <img src="images/biq01.jpg" alt="Biquge" loading="lazy">
+      Biquge
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://www.92tingshu.com/" target="_blank">
+      <img src="images/92tingshu.jpg" alt="92Tingshu" loading="lazy">
+      Love Listening to Novels
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://www.ddxs.com/" target="_blank">
+      <img src="images/ddxs.jpg" alt="ddxs" loading="lazy">
+      Dingdian Novel
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://www.qianqianxiaoshuo.cc/" target="_blank">
+      <img src="images/qianqianxiaoshuo.jpg" alt="Qianqian" loading="lazy">
+      Qianqian Novel
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://www.5800.cc/" target="_blank">
+      <img src="images/5800.jpg" alt="5800" loading="lazy">
+      58 Novel Network
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://www.jjwxc.net/" target="_blank">
+      <img src="images/jjwxc.jpg" alt="Jinjiang Literature City" loading="lazy">
+      Jinjiang Literature City
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="http://www.hnsplan.com/" target="_blank">
+      <img src="images/hnsplan.jpg" alt="Hnsplan" loading="lazy">
+      South China Novels
+    </a>
+  </div>
+
+  <div class="item fade-in slide-in">
+    <a href="https://69shu.me/index.html" target="_blank">
+      <img src="images/69shu.jpg" alt="69Shu" loading="lazy">
+      69Shu
+    </a>
+  </div>
+
+ 
+</div>
+
+
+
+
+      <!-- More site items go here... -->
+
+    </div> <!-- End grid-container -->
+  </main>
+
+  <!-- (Optional) Back to Top Button Placeholder -->
+  <button id="backToTop" title="Back to Top">⬆️</button>
+
+  <!-- (Optional) Other Features Placeholder (like Lazy Loading, Fade In On Load, Slide-In Animations) -->
+
+  <!-- (Optional) JavaScript for Dynamic Background -->
+  <!-- (Optional) JavaScript for Dark Mode Switch -->
+  <!-- (Optional) JavaScript for Back to Top -->
+  <!-- (Optional) JavaScript for Fade In, Slide-In, etc. -->
+
+
+<!-- Dynamic Background: Load Particles.js library -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!-- Link to JS File (if you want separate .js file) -->
+  <script src="script.js"></script>	
+
+<!-- Dark Mode Toggle Script -->
+<script>
+const toggleButton = document.getElementById('darkModeToggle');
+
+toggleButton.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+
+  // Save user preference
+      localStorage.setItem('mode', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    });
+
+// Load saved mode preference
+if (localStorage.getItem('mode') === 'dark') {
+  document.body.classList.add('dark-mode');
+}
+
+</script>
+
+
+<script>
+    // Your JavaScript code for Fade In effect
+    window.addEventListener("load", () => {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      fadeElements.forEach(element => {
+        element.classList.add('fade-in');
+      });
+    });
+
+
+// Back to Top Button Functionality
+const backToTopButton = document.getElementById('backToTop');
+
+window.onscroll = function() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    backToTopButton.style.display = "block"; // Show button when scrolled down
+  } else {
+    backToTopButton.style.display = "none"; // Hide button when at the top
+  }
+};
+
+backToTopButton.onclick = function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll back to the top
+};
+
+
+
+  </script>
+
+<!-- Dynamic Background: Initialize Particles -->
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 80, // From your config
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "size": {
+      "value": 3, // From your config
+      "random": true,
+      "anim": {
+        "enable": true,
+        "speed": 40,
+        "size_min": 0.1
+      }
+    },
+    "move": {
+      "enable": true,
+      "speed": 1, // From your config
+      "direction": "none",
+      "random": true,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false
+    },
+    "line_linked": {
+      "enable": true // From your config
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      }
+    }
+  },
+  "retina_detect": true
+});
+
+
+</script>
+</body>
+
+</html>
